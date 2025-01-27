@@ -46,3 +46,147 @@ int main()
 
     return 0;
 }
+
+
+
+
+Consider the following list of student’s grade
+
+64	36	56	47	40	54	61	60	58	64	54
+48	59	45	63	54	50	49	51	60	58	59
+
+Initialize an array with above grades and find the following things about the above data.
+a.	The minimum grade
+b.	The maximum grade
+c.	Average
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    double sum=0;
+   int arr[]={64,36,56,	47,	40,	54,	61,	60,	58,	64,	54,48,59,45,63,	54,	50,	49,	51,	60,	58,	59};
+   for(int i=0;i<22;i++){
+    if(arr[0]<arr[i]){
+        arr[0]=arr[i];
+    }
+   }
+   cout<<"maximum grade "<<arr[0]<<endl;
+
+
+     for(int i=0;i<22;i++){
+    if(arr[0]>arr[i]){
+        arr[0]=arr[i];
+    }
+   }
+   cout<<"minimum grade "<<arr[0]<<endl;
+
+     for(int i=0;i<22;i++){
+
+    sum=sum+arr[i];
+   }
+   cout<<"average "<<sum/22<<endl;
+
+
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+1.	Apply Bubble sort algorithms to sort elements of a given array.
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+   int arr[]={64,36,56,	47,	40,	54,	61,	60,	58,	64,	54,48,59,45,63,	54,	50,	49,	51,	60,	58,	59};
+   int sized=sizeof(arr)/sizeof(arr[0]);
+   cout<<" size of array " <<sized<<endl;
+   for(int i=0;i<sized-1;i++){
+      for(int j=0;j<sized-i-1;j++){
+      if(arr[j]>arr[j+1]){
+         int temp= arr[j];
+         arr[j]=arr[j+1];
+         arr[j+1]=temp;
+         }
+    }
+   }
+
+
+for(int i=0;i<sized;i++){
+    cout<<arr[i]<<" ";
+}
+
+
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+2.	Write a program to search a value in an array. Your program should also notify:
+a)	Index of the array where value found
+b)	Number of times the value was found in array
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+int counter=0;
+   int arr[]={64,36,56,	47,	40,	54,	61,	60,	58,	64,	54,48,59,45,63,	54,	50,	49,	51,	60,	58,	59};
+   int sized=sizeof(arr)/sizeof(arr[0]);
+   cout<<" size of array " <<sized<<endl;
+   int num=54;
+   for(int i=0;i<sized;i++){
+
+     if(num==arr[i]){
+        cout<<num<<" is " << i<<endl;
+        counter++;
+     }
+
+   }
+   cout<<"number is repeated "<<counter<<" times"<<endl;
+
+
+
+
+    return 0;
+}
+
